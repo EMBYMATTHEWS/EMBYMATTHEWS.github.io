@@ -2,25 +2,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
-  }
-  
-  .item-row {
+    margin-top: 10px; /* Adjust this value to move images higher */
+}
+
+.item-row {
     display: flex;
     justify-content: space-around;
     width: 100%;
     margin-bottom: 20px;
-  }
-  
-  .item-row img {
+}
+
+.item-row img {
     width: 45%; /* Adjust the width percentage to control image size */
-  }
-  
-  .item-single {
+    margin-bottom: 5px; /* Space between image and name */
+}
+
+.item-single {
     text-align: center;
-    margin-top: 20px;
-  }
-  
-  .item-single img {
+    margin-top: 10px; /* Adjust this value to move the single image higher */
+}
+
+.item-single img {
     width: 50%; /* Adjust the width percentage to control image size */
-  }
+    margin-bottom: 5px; /* Space between image and name */
+}
+
+.item-name {
+    text-align: center;
+    width: 45%; /* Match the width of the image */
+    word-wrap: break-word;
+    margin: 0 auto;
+}
+
+.item-single .item-name {
+    width: 50%; /* Match the width of the single image */
+}
