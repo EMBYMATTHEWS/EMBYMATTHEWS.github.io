@@ -13,7 +13,6 @@ nav ul {
     display: flex;
     justify-content: flex-end; /* Aligns the menu to the right */
     background-color: white; /* Keeps the background white */
-    border-bottom: 1px solid #ffffff; /* Optional: Add a subtle border to separate the menu */
     position: fixed; /* Keep the navigation fixed at the top */
     width: 100%;
     top: 0;
