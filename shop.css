@@ -1,37 +1,44 @@
-/* Style for the navigation menu */
-nav ul {
+body {
+    margin: 25px;
+    background-color: rgb(240, 240, 240);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.nav-menu {
     list-style-type: none;
-    margin: 0;
+    margin: 20px 0 0 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
+    text-align: center;
 }
 
-nav ul li {
-    float: left;
+.nav-menu li {
+    display: inline;
+    margin: 0 10px;
 }
 
-nav ul li a {
-    display: block;
+.nav-menu li a {
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bold;
 }
 
-nav ul li a:hover {
-    background-color: #111;
+.nav-menu li a:hover {
+    background-color: #555;
+    color: white;
 }
 
-/* Adjustments for shop gallery */
+/* Styles for shop gallery */
 .shop-gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px; /* Adjust based on the height of your navigation bar */
+    margin-top: 60px;
 }
 
 .item-row {
@@ -41,15 +48,9 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-.item-row img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 5px;
-}
-
 .item-name {
     text-align: center;
-    width: 200px; /* Match the width of the image */
+    width: 200px;
     word-wrap: break-word;
     margin: 0 auto;
 }
@@ -57,10 +58,4 @@ nav ul li a:hover {
 .item-single {
     text-align: center;
     margin-top: 10px;
-}
-
-.item-single img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 5px;
 }
