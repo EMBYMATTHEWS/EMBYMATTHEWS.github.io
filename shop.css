@@ -1,10 +1,11 @@
-body {
+\body {
     margin: 25px;
     background-color: rgb(240, 240, 240);
     font-family: Arial, sans-serif;
     font-size: 14px;
 }
 
+/* Navigation Menu Styles */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -17,18 +18,21 @@ nav ul {
 
 nav ul li {
     float: left;
+    margin-left: 20px; /* Adds spacing between the menu items */
 }
 
 nav ul li a {
     display: block;
-    color: black;
+    color: black; /* Keep the text color black as per the original style */
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: normal;
+    font-size: 16px; /* Adjust font size to match the desired style */
 }
 
 nav ul li a:hover {
-    background-color: #ddd;
+    background-color: #ddd; /* Light background on hover */
     color: black;
 }
 
@@ -37,7 +41,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 60px; /* Adjust to ensure the content doesn't overlap with the navigation */
 }
 
 .item-row {
