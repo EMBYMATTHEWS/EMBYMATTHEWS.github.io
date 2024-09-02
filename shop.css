@@ -5,32 +5,31 @@ body {
     font-size: 14px;
 }
 
-.nav-menu {
+nav ul {
     list-style-type: none;
-    margin: 20px 0 0 0;
+    margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
-    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
-.nav-menu li {
-    display: inline;
-    margin: 0 10px;
+nav ul li {
+    float: left;
 }
 
-.nav-menu li a {
-    display: inline-block;
-    color: white;
+nav ul li a {
+    display: block;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-weight: bold;
 }
 
-.nav-menu li a:hover {
-    background-color: #555;
-    color: white;
+nav ul li a:hover {
+    background-color: #ddd;
+    color: black;
 }
 
 /* Styles for shop gallery */
