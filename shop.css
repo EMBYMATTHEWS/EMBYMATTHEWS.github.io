@@ -2,7 +2,7 @@ body {
     margin: 0; /* Remove margin to ensure consistency across pages */
     background-color: white; /* Ensure the background remains white */
     font-family: Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 /* Navigation Menu Styles */
@@ -10,14 +10,11 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: flex-end; /* Aligns the menu to the right */
-    background-color: white; /* Keeps the background white */
-    position: fixed; /* Keep the navigation fixed at the top */
-    width: 100%;
+    overflow: hidden;
+    position: absolute;
     top: 0;
-    z-index: 1000; /* Ensures the navigation stays above other content */
-}
+    right: 0;
+  }
 
 nav ul li {
     display: inline-block;
