@@ -1,8 +1,37 @@
+/* Style for the navigation menu */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+nav ul li {
+    float: left;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #111;
+}
+
+/* Adjustments for shop gallery */
 .shop-gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: -50px; /* Adjust this value to move images higher */
+    margin-top: 60px; /* Adjust based on the height of your navigation bar */
 }
 
 .item-row {
@@ -13,27 +42,25 @@
 }
 
 .item-row img {
-    width: 45%; /* Adjust the width percentage to control image size */
-    margin-bottom: 5px; /* Space between image and name */
-}
-
-.item-single {
-    text-align: center;
-    margin-top: 10px; /* Adjust this value to move the single image higher */
-}
-
-.item-single img {
-    width: 50%; /* Adjust the width percentage to control image size */
-    margin-bottom: 5px; /* Space between image and name */
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5px;
 }
 
 .item-name {
     text-align: center;
-    width: 45%; /* Match the width of the image */
+    width: 200px; /* Match the width of the image */
     word-wrap: break-word;
     margin: 0 auto;
 }
 
-.item-single .item-name {
-    width: 50%; /* Match the width of the single image */
+.item-single {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.item-single img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 5px;
 }
