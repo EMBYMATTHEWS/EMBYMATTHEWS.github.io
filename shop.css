@@ -1,6 +1,6 @@
 body {
-    margin: 25px;
-    background-color: rgb(240, 240, 240);
+    margin: 0; /* Remove margin to ensure consistency across pages */
+    background-color: white; /* Ensure the background remains white */
     font-family: Arial, sans-serif;
     font-size: 14px;
 }
@@ -10,25 +10,29 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    position: absolute;
+    display: flex;
+    justify-content: flex-end; /* Aligns the menu to the right */
+    background-color: white; /* Keeps the background white */
+    border-bottom: 1px solid #ccc; /* Optional: Add a subtle border to separate the menu */
+    position: fixed; /* Keep the navigation fixed at the top */
+    width: 100%;
     top: 0;
-    right: 0;
+    z-index: 1000; /* Ensures the navigation stays above other content */
 }
 
 nav ul li {
-    float: left;
-    margin-left: 20px; /* Adds spacing between the menu items */
+    display: inline-block;
+    margin-right: 20px; /* Adds spacing between the menu items */
 }
 
 nav ul li a {
     display: block;
-    color: black; /* Keep the text color black as per the original style */
+    color: black; /* Keep the text color black for consistency */
     text-align: center;
-    padding: 14px 16px;
+    padding: 16px 20px; /* Adjust padding for consistent spacing */
     text-decoration: none;
     font-weight: normal;
-    font-size: 16px; /* Adjust font size to match the desired style */
+    font-size: 16px;
 }
 
 nav ul li a:hover {
@@ -36,12 +40,12 @@ nav ul li a:hover {
     color: black;
 }
 
-/* Styles for shop gallery */
+/* Adjust the content to not overlap with the fixed navigation */
 .shop-gallery {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 60px; /* Adjust to ensure the content doesn't overlap with the navigation */
+    margin-top: 80px; /* Adjust margin to account for the fixed navigation bar */
 }
 
 .item-row {
