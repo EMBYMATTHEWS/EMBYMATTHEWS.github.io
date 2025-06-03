@@ -1,32 +1,32 @@
 body {
-    margin: 0; /* Reset default body margin */
-    font-family: sans-serif; /* A common readable font */
+    margin: 0;
+    font-family: sans-serif;
 }
 
 header {
     text-align: center; /* Center the logo */
-    padding-top: 20px; /* Add some space above the logo */
+    padding-top: 20px;
+    margin-bottom: 20px; /* Add some space below the logo */
 }
 
 nav {
-    text-align: center; /* Center the navigation */
-    padding: 10px 0; /* Add some padding above and below the navigation */
+    text-align: center; /* Center the navigation links */
 }
 
 nav ul {
-    list-style: none; /* Remove bullet points */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
 nav ul li {
-    display: inline; /* Display list items horizontally */
-    margin: 0 15px; /* Add spacing between links */
+    display: inline;
+    margin: 0 15px;
 }
 
 nav a {
-    text-decoration: none; /* Remove underlines from links */
-    color: black; /* Set link color */
+    text-decoration: none;
+    color: black;
 }
 
 .press-articles {
@@ -49,7 +49,7 @@ nav a {
 }
 
 .article::before {
-    content: "Press Coverage"; /* Default title */
+    content: ""; /* Removed the default "Press Coverage" text */
     position: absolute;
     top: 0;
     left: 0;
@@ -62,7 +62,7 @@ nav a {
     color: black;
 }
 
-/* Optional title for the first article - you can remove this if you prefer the default */
+/* Title for the first article's pop-up */
 .article:nth-child(1)::before {
     content: "Shoutout LA";
 }
