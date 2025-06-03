@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    min-height: 100vh; /* Ensure the body takes up at least the full viewport height */
+    background-color: #f0f0f0; /* A light background color */
+}
+
+.social-bar-container {
+    position: relative; /* To allow absolute positioning of icons */
+    border: 1px solid black; /* Add a border for testing */
+}
+
+.social-bar {
+    display: block; /* Ensure the image takes its natural width */
+}
+
+.social-icon {
+    position: absolute;
+    width: 60px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+    /* You might need to fine-tune these initial top and left values */
+}
+
+.social-icon img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
