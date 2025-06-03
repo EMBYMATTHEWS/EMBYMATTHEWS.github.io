@@ -1,0 +1,48 @@
+.press-articles {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.article {
+    border: 2px solid #d4d0c8; /* Simulate window border */
+    background-color: #f0f0f0; /* Light gray background */
+    margin-bottom: 20px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    /* Add a "title bar" feel */
+    position: relative; /* Needed for pseudo-element positioning */
+    padding-top: 30px; /* Make space for the title bar */
+}
+
+.article::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background: linear-gradient(to bottom, #e0e0e0, #c0c0c0); /* Title bar gradient */
+    border-bottom: 1px solid #a0a0a0;
+    padding-left: 10px;
+    font-weight: bold;
+    color: black; /* You could add a title here if you like */
+}
+
+.article p {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.article img {
+    max-width: 300px;
+    height: auto;
+    margin-right: 20px;
+}
+
+/* Optional: Add a title to the first article's pop-up */
+.article:nth-child(1)::before {
+    content: "Shoutout LA";
+}
