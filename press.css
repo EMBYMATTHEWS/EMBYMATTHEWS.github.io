@@ -9,26 +9,31 @@ header {
     margin-bottom: 20px; /* Add some space below the logo */
 }
 
-nav {
-    text-align: center; /* Center the navigation links */
-}
-
+/* Navigation Menu Styles */
 nav ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
     margin: 0;
-}
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin-right: 20px; /* Adds spacing between the menu items */
 }
 
-nav a {
+nav ul li a {
+    display: block;
+    color: black; /* Keep the text color black for consistency */
+    text-align: center;
+    padding: 16px 20px; /* Adjust padding for consistent spacing */
     text-decoration: none;
-    color: black;
+    font-weight: normal;
+    font-size: 16px;
 }
-
 .press-articles {
     display: flex;
     flex-direction: column;
