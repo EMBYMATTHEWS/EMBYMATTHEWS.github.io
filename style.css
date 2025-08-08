@@ -62,13 +62,13 @@ nav ul li a:hover {
 #hero {
     padding: 2.5rem 1.25rem;
 }
+/* In the HERO LOGO section */
 .hero-logo {
-    /* Let's make the logo's max-width scale with the viewport width (vw) */
-    max-width: clamp(300px, 60vw, 600px);
+    /* Adjusted clamp values for better scaling: min 220px, ideal 50vw, max 500px */
+    max-width: clamp(220px, 50vw, 500px);
     width: 90%;
     height: auto;
 }
-
 /* ==== MUSIC CAROUSEL ==== */
 #music {
     padding: 2.5rem 0;
@@ -142,39 +142,32 @@ footer {
 }
 
 
-/* =================================================================== */
-/* ==== MEDIA QUERIES FOR RESPONSIVE DESIGN (The Magic Happens Here) ==== */
-/* =================================================================== */
-
-/* For tablets and smaller devices (less than 768px wide) */
+/* Replace your existing @media block with this one */
 @media (max-width: 768px) {
     :root {
-        /* Make the base font size slightly smaller on tablets/mobiles */
         font-size: 14px;
     }
 
+    /* ==== NEW MOBILE NAVIGATION STYLES ==== */
+    nav ul {
+        /* On smaller screens, stack the nav links vertically */
+        flex-direction: column;
+        align-items: center; /* Center the stacked links */
+        gap: 0.5rem; /* Reduce gap for vertical layout */
+    }
+
+    nav ul li {
+        width: 100%; /* Make each link take up full width */
+        text-align: center;
+    }
+    
+    nav ul li a {
+        display: block; /* Make the entire area clickable */
+    }
+    /* ===================================== */
+
     .connect-container {
-        /* Stack the email and social sections vertically */
         flex-direction: column;
         gap: 2.5rem;
-    }
-}
-
-/* For mobile phones (less than 480px wide) */
-@media (max-width: 480px) {
-    nav ul {
-        gap: 0.5rem; /* Reduce gap between nav items */
-    }
-    nav ul li a {
-        padding: 0.5rem; /* Reduce padding on nav items */
-    }
-
-    .social-icons img {
-        width: 35px; /* Make social icons even smaller */
-        height: 35px;
-    }
-
-    .content-section {
-        padding: 2.5rem 1rem;
     }
 }
