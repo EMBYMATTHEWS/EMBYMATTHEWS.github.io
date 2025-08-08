@@ -1,9 +1,15 @@
-/* ==== GENERAL & BODY ==== */
+/* ==== GENERAL & BODY (Now using REM for fonts) ==== */
+:root {
+    /* Base font size for desktop. We'll change this for mobile. */
+    font-size: 16px;
+}
+
 body {
     background-color: white;
     margin: 0;
     font-family: Arial, sans-serif;
     color: black;
+    text-align: center;
 }
 
 main {
@@ -11,30 +17,41 @@ main {
 }
 
 .content-section {
-    padding: 60px 20px;
+    padding: 4rem 1.25rem; /* Use REM for scalable padding */
     max-width: 900px;
     margin: 0 auto;
 }
 
+h2 {
+    /* This makes the font size fluid: it will be 2.5rem, but won't go smaller than 2rem or larger than 3rem */
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
 /* ==== HEADER & NAVIGATION ==== */
 header {
-    padding: 20px;
+    padding: 1.25rem;
 }
 nav {
     display: flex;
-    justify-content: center; /* Center the nav bar */
+    justify-content: center;
 }
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap; /* Allow nav items to wrap on small screens */
+    justify-content: center;
+    gap: 1rem;
 }
 nav ul li a {
     color: black;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 0.6rem 1rem;
     transition: background-color 0.3s;
 }
 nav ul li a:hover {
@@ -43,32 +60,32 @@ nav ul li a:hover {
 
 /* ==== HERO LOGO ==== */
 #hero {
-    padding: 40px 20px;
+    padding: 2.5rem 1.25rem;
 }
 .hero-logo {
-    max-width: 600px; /* Adjust size as needed */
+    /* Let's make the logo's max-width scale with the viewport width (vw) */
+    max-width: clamp(300px, 60vw, 600px);
     width: 90%;
     height: auto;
 }
 
 /* ==== MUSIC CAROUSEL ==== */
 #music {
-    padding: 40px 0;
-    background-color: #f7f7f7; /* A slight background color to separate it */
+    padding: 2.5rem 0;
+    background-color: #f7f7f7;
 }
 .carousel-container {
-    /* Basic styling for the carousel area */
     max-width: 800px;
     margin: 0 auto;
     border: 1px solid #ddd;
-    padding: 20px;
-    min-height: 450px; /* Placeholder height */
+    padding: 1.25rem;
+    /* Removed fixed min-height to let content define the height */
 }
 .carousel-slide img, .carousel-slide iframe {
     width: 100%;
+    aspect-ratio: 16 / 9; /* This maintains a 16:9 widescreen ratio for videos */
     height: auto;
 }
-
 
 /* ==== CONNECT SECTION (EMAIL + SOCIALS) ==== */
 #connect {
@@ -76,44 +93,88 @@ nav ul li a:hover {
 }
 .connect-container {
     display: flex;
-    flex-wrap: wrap; /* Allows items to stack on small screens */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 3rem;
 }
 .mailing-list-wrapper, .social-icons-wrapper {
     text-align: center;
 }
 .mailing-list-wrapper form {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap; /* Allow form to stack on very small screens */
+    justify-content: center;
+    gap: 0.6rem;
 }
 .mailing-list-wrapper input[type="email"] {
-    padding: 10px;
+    padding: 0.6rem;
     border: 1px solid black;
-    min-width: 250px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 280px; /* Use max-width instead of min-width */
 }
 .mailing-list-wrapper button {
-    padding: 10px 20px;
+    padding: 0.6rem 1.25rem;
     background-color: black;
     color: white;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
 }
 .social-icons {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 1.25rem;
 }
 .social-icons img {
-    width: 50px; /* Adjust size of social icons */
-    height: 50px;
+    width: 40px; /* Smaller base size for icons */
+    height: 40px;
 }
 
 /* ==== FOOTER ==== */
 footer {
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    padding: 1.25rem;
+    margin-top: 2.5rem;
     border-top: 1px solid #ddd;
-    font-size: 14px;
+    font-size: 0.875rem;
+}
+
+
+/* =================================================================== */
+/* ==== MEDIA QUERIES FOR RESPONSIVE DESIGN (The Magic Happens Here) ==== */
+/* =================================================================== */
+
+/* For tablets and smaller devices (less than 768px wide) */
+@media (max-width: 768px) {
+    :root {
+        /* Make the base font size slightly smaller on tablets/mobiles */
+        font-size: 14px;
+    }
+
+    .connect-container {
+        /* Stack the email and social sections vertically */
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+}
+
+/* For mobile phones (less than 480px wide) */
+@media (max-width: 480px) {
+    nav ul {
+        gap: 0.5rem; /* Reduce gap between nav items */
+    }
+    nav ul li a {
+        padding: 0.5rem; /* Reduce padding on nav items */
+    }
+
+    .social-icons img {
+        width: 35px; /* Make social icons even smaller */
+        height: 35px;
+    }
+
+    .content-section {
+        padding: 2.5rem 1rem;
+    }
 }
