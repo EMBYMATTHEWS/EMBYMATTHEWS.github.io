@@ -58,16 +58,26 @@ nav ul li a:hover {
     background-color: #ddd;
 }
 
-/* ==== HERO LOGO ==== */
 #hero {
-    padding: 2.5rem 1.25rem;
+    /* Set a height relative to the viewport. 85vh = 85% of the screen height. */
+    min-height: 85vh;
+    padding: 1.25rem;
+    /* Use Flexbox to perfectly center the logo inside this tall section */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-/* In the HERO LOGO section */
+
 .hero-logo {
-    /* Adjusted clamp values for better scaling: min 220px, ideal 50vw, max 500px */
-    max-width: clamp(220px, 50vw, 500px);
-    width: 90%;
+    /* Let the browser determine initial size */
+    width: auto;
     height: auto;
+    
+    /* Keep our existing width constraint from before */
+    max-width: clamp(220px, 50vw, 500px); 
+
+    /* THE KEY FIX: The logo can never be taller than 45% of the screen's height */
+    max-height: 45vh;
 }
 /* ==== MUSIC CAROUSEL ==== */
 #music {
