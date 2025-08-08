@@ -1,28 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emby Matthews - Official Website</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <audio autoplay loop hidden>
+        <source src="RESOURCES/Joji - Tick Tock (Official Video).mp3" type="audio/mp3">
+    </audio>
+
     <header>
-        <img src="RESOURCES/EMBY MATTHEWS LOGO.png" width="940" height="400">
         <nav>
             <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT ME</a></li>
-                <li><a href="press.html">PRESS COVERAGE</a></li>
-                <li><a href="socials.html">SOCIALS</a></li>
-                <li><a href="mailinglist.html">MAILING LIST</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#story">ABOUT ME</a></li>
+                <li><a href="#connect">MAILING LIST</a></li>
                 <li><a href="shop.html">SHOP</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Your existing content -->
-    <p></p>
+    <main>
 
-    <audio controls autoplay>
-        <source src="RESOURCES/Joji - Tick Tock (Official Video).mp3" type="audio/mp3">
-    </audio>
+        <section id="hero">
+            <img src="RESOURCES/EMBY MATTHEWS LOGO.png" alt="Emby Matthews Logo" class="hero-logo">
+        </section>
+
+        <section id="music">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <a href="#"><img src="RESOURCES/album-cover-1.jpg" alt="Album 1"></a>
+                </div>
+                <div class="carousel-slide">
+                    <iframe src="https://www.youtube.com/embed/your-video-id" frameborder="0" allowfullscreen></iframe>
+                </div>
+                </div>
+        </section>
+
+        <section id="story" class="content-section">
+            <h2>My Story</h2>
+            <p>[Your mission and history as an artist will go here.]</p>
+            </section>
+
+        <section id="connect" class="content-section">
+            <div class="connect-container">
+                <div class="mailing-list-wrapper">
+                    <h3>Join the Mailing List</h3>
+                    <form action="#">
+                        <input type="email" placeholder="your.email@example.com" required>
+                        <button type="submit">SUBSCRIBE</button>
+                    </form>
+                </div>
+                <div class="social-icons-wrapper">
+                    <h3>Follow Me</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="RESOURCES/social-icon-1.png" alt="Social Media 1"></a>
+                        <a href="#"><img src="RESOURCES/social-icon-2.png" alt="Social Media 2"></a>
+                        <a href="#"><img src="RESOURCES/social-icon-3.png" alt="Social Media 3"></a>
+                        <a href="#"><img src="RESOURCES/social-icon-4.png" alt="Social Media 4"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Emby Matthews. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>

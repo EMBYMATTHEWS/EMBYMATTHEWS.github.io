@@ -1,60 +1,119 @@
+/* ==== GENERAL & BODY ==== */
 body {
-  background-color: white;
-  margin: 25px;
-  font-family: arial, sans-serif;
-  font-size: 14px;
+    background-color: white;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black;
 }
 
+main {
+    text-align: center;
+}
+
+.content-section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ==== HEADER & NAVIGATION ==== */
 header {
-  position: relative;
+    padding: 20px;
 }
-
+nav {
+    display: flex;
+    justify-content: center; /* Center the nav bar */
+}
 nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
 }
-
-nav ul li {
-  float: left;
-}
-
 nav ul li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+    color: black;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s;
 }
-
 nav ul li a:hover {
-  background-color: #ddd;
-  color: black;
+    background-color: #ddd;
 }
 
-h1 {
-  font-size: 35px;
-  font-weight: normal;
-  text-align: center;
-  margin-top: 5px;
+/* ==== HERO LOGO ==== */
+#hero {
+    padding: 40px 20px;
+}
+.hero-logo {
+    max-width: 600px; /* Adjust size as needed */
+    width: 90%;
+    height: auto;
 }
 
-p {
-  font-family: "Comic Sans MS", "Comic Sans";
-  font-size: 20px;
-  width: 800px;
-  margin: 0 auto;
-  text-align: center;
+/* ==== MUSIC CAROUSEL ==== */
+#music {
+    padding: 40px 0;
+    background-color: #f7f7f7; /* A slight background color to separate it */
+}
+.carousel-container {
+    /* Basic styling for the carousel area */
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 20px;
+    min-height: 450px; /* Placeholder height */
+}
+.carousel-slide img, .carousel-slide iframe {
+    width: 100%;
+    height: auto;
 }
 
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+
+/* ==== CONNECT SECTION (EMAIL + SOCIALS) ==== */
+#connect {
+    background-color: white;
+}
+.connect-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to stack on small screens */
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+.mailing-list-wrapper, .social-icons-wrapper {
+    text-align: center;
+}
+.mailing-list-wrapper form {
+    display: flex;
+    gap: 10px;
+}
+.mailing-list-wrapper input[type="email"] {
+    padding: 10px;
+    border: 1px solid black;
+    min-width: 250px;
+}
+.mailing-list-wrapper button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+.social-icons img {
+    width: 50px; /* Adjust size of social icons */
+    height: 50px;
 }
 
-
+/* ==== FOOTER ==== */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
