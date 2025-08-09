@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emby Matthews - Official Website</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
 
@@ -29,10 +30,30 @@
         </section>
 
         <section id="music">
-            <div class="carousel-container">
-                <p style="padding: 5rem 0;">Media Carousel Area</p>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="[Your Spotify or Bandcamp Link Here]" target="_blank">
+                            <img src="RESOURCES/album-cover-1.jpg" alt="Album 1 Title">
+                            <div class="slide-caption">Go to Spotify</div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <iframe src="https://www.youtube.com/embed/your-video-id" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="[Your Article Link Here]" target="_blank">
+                            <img src="RESOURCES/press-image-1.jpg" alt="Article Title">
+                            <div class="slide-caption">Read Full Article</div>
+                        </a>
+                    </div>
+                    </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </section>
+
 
         <section id="story" class="content-section">
             <h2>My Story</h2>
@@ -64,6 +85,27 @@
     <footer>
         <p>&copy; 2025 Emby Matthews. All Rights Reserved.</p>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
 
 </body>
 </html>
