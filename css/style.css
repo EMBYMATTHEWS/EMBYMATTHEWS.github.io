@@ -184,3 +184,44 @@ footer {
 .swiper-button-next, .swiper-button-prev {
     color: white;
 }
+/*
+ * Styles for the sticky bar at the bottom of the screen
+ */
+.sticky-image-bar {
+    /* --- Core Positioning --- */
+    position: fixed; /* This makes it "stick" to the browser window */
+    bottom: 0;       /* Aligns it to the bottom */
+    left: 0;         /* Aligns it to the left */
+    width: 100%;     /* Makes it span the full width */
+    height: 70px;    /* Set the height of your bar */
+
+    /* --- Background Image --- */
+    /* IMPORTANT: Replace with the correct path to your image */
+    background-image: url('mspaint_select_bar.png');
+    background-size: 100% 100%; /* Stretches the image to fit the container */
+    background-repeat: no-repeat;
+
+    /* --- Layout for the slots inside --- */
+    display: flex;
+    justify-content: space-around; /* Evenly spaces the slots */
+    align-items: center;          /* Vertically centers the slots */
+    padding: 0 10px; /* Add some padding to align slots with the background */
+}
+
+/*
+ * Styles for the individual clickable slots
+ */
+.bar-slot {
+    display: block;
+    height: 75%; /* Make the slot slightly smaller than the bar's height */
+    flex-grow: 1; /* Allows each slot to grow and fill space */
+    margin: 0 5px; /* Adds a small gap between slots */
+    
+    /* Optional: Add a subtle effect on hover to show it's interactive */
+    transition: background-color 0.2s ease;
+}
+
+.bar-slot:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slight white highlight on hover */
+    border-radius: 4px;
+}
