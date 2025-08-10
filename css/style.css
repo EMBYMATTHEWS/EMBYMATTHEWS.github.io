@@ -50,20 +50,24 @@ nav ul li a:hover {
     background-color: #ddd;
 }
 
-/* REDUCED PADDING to remove dead space */
+/* === UPDATED SPACING === */
 #hero {
-    padding: 2rem 1.25rem;
+    /* Drastically reduced top and bottom padding */
+    padding: 1rem 1.25rem;
 }
 .hero-logo {
     display: block;
     margin: 0 auto;
     height: auto;
-    max-width: 450px;
+    /* Further reduced max-width to reduce height */
+    max-width: 400px;
 }
 
-/* REDUCED PADDING to remove dead space */
+/* === UPDATED SPACING === */
 #music {
-    padding: 2rem 0;
+    /* Drastically reduced top padding to pull the carousel up */
+    padding-top: 1rem;
+    padding-bottom: 2.5rem; /* Kept some bottom padding */
     background-color: #f7f7f7;
 }
 
