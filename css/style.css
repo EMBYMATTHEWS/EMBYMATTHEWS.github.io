@@ -1,15 +1,17 @@
 :root {
     font-size: 16px;
 }
+/* In your style.css file, update the body rule */
 body {
     background-color: white;
     margin: 0;
     font-family: Arial, sans-serif;
     color: black;
     text-align: center;
-    /* Add padding to the bottom of the body to prevent the sticky bar from covering content */
-    padding-bottom: 70px; /* This should match the height of your sticky bar */
+    /* UPDATE: Increased padding to make space for the floating bar */
+    padding-bottom: 100px; 
 }
+
 main {
     text-align: center;
 }
@@ -146,16 +148,28 @@ footer {
 }
 
 /* ==== STICKY IMAGE BAR ==== */
+
+
+/* Replace your existing .sticky-image-bar rule with this entire block */
 .sticky-image-bar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    /* NEW: Move it up slightly from the edge */
+    bottom: 1rem;       
+    /* NEW: These three lines center the bar horizontally */
+    left: 50%;
+    transform: translateX(-50%);
+    /* NEW: Set a width and a max-width */
+    width: 90%;
+    max-width: 700px;
     height: 70px;
     z-index: 1000;
+    
+    /* --- FIX for the background image --- */
     background-image: url('../RESOURCES/mspaint_select_bar.png');
-    background-size: 100% 100%;
+    background-size: contain; /* This prevents stretching and maintains aspect ratio */
     background-repeat: no-repeat;
+    background-position: center; /* This centers the contained background image */
+
     display: flex;
     justify-content: space-around;
     align-items: center;
