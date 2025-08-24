@@ -1,17 +1,14 @@
 :root {
     font-size: 16px;
 }
-/* In your style.css file, update the body rule */
 body {
     background-color: white;
     margin: 0;
     font-family: Arial, sans-serif;
     color: black;
     text-align: center;
-    /* UPDATE: Increased padding to make space for the floating bar */
     padding-bottom: 100px; 
 }
-
 main {
     text-align: center;
 }
@@ -52,21 +49,17 @@ nav ul li a:hover {
     background-color: #ddd;
 }
 
-
 #hero {
-    /* Minimal padding, mostly on the top */
     padding: 1rem 1.25rem 0.5rem 1.25rem;
 }
 .hero-logo {
     display: block;
     margin: 0 auto;
     height: auto;
-    /* Final size reduction */
     max-width: 350px;
 }
 
 #music {
-    /* Minimal top padding for a little separation */
     padding-top: 0.5rem;
     padding-bottom: 2.5rem;
     background-color: #f7f7f7;
@@ -148,35 +141,30 @@ footer {
 }
 
 /* ==== STICKY IMAGE BAR ==== */
-
-
-/* Replace your existing .sticky-image-bar rule with this entire block */
 .sticky-image-bar {
     position: fixed;
-    /* NEW: Move it up slightly from the edge */
     bottom: 1rem;       
-    /* NEW: These three lines center the bar horizontally */
     left: 50%;
     transform: translateX(-50%);
-    /* NEW: Set a width and a max-width */
     width: 90%;
     max-width: 700px;
     height: 70px;
     z-index: 1000;
-    
-    /* --- FIX for the background image --- */
     background-image: url('../RESOURCES/mspaint_select_bar.png');
-    background-size: contain; /* This prevents stretching and maintains aspect ratio */
+    background-size: contain;
     background-repeat: no-repeat;
-    background-position: center; /* This centers the contained background image */
-
+    background-position: center;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 0 10px;
 }
+
+/* UPDATED: This is the fix for the icons */
 .bar-slot {
-    display: block;
+    display: flex; /* Use flexbox to center the image inside the link */
+    align-items: center;
+    justify-content: center;
     height: 75%;
     flex-grow: 1;
     margin: 0 5px;
@@ -187,7 +175,7 @@ footer {
     border-radius: 4px;
 }
 .bar-slot img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Ensures the logo fits without being stretched or cropped */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
