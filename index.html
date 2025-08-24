@@ -58,48 +58,12 @@
     </footer>
     
     <div class="sticky-image-bar">
-        <a href="#" class="bar-slot" title="Spotify">
-            <img src="RESOURCES/spotify_logo.png" alt="Spotify">
-        </a>
-        <a href="https://music.apple.com/us/artist/emby-matthews/1546039557" class="bar-slot" title="Apple Music" target="_blank">
-            <img src="RESOURCES/apple_music_logo.png" alt="Apple Music">
-        </a>
-        <a href="https://emby.bandcamp.com/music" class="bar-slot" title="Bandcamp" target="_blank">
-            <img src="RESOURCES/bandcamp_logo.png" alt="Bandcamp">
-        </a>
-        <a href="https://www.youtube.com/@EMBYMATTHEWS" class="bar-slot" title="YouTube" target="_blank">
-            <img src="RESOURCES/youtube_logo.png" alt="YouTube">
-        </a>
-        <a href="https://www.instagram.com/embymatthews" class="bar-slot" title="Instagram" target="_blank">
-            <img src="RESOURCES/instagram_logo.png" alt="Instagram">
-        </a>
-        <a href="https://www.tiktok.com/@embymatthews" class="bar-slot" title="TikTok" target="_blank">
-            <img src="RESOURCES/tiktok_logo_with_lozenge.png" alt="TikTok">
-        </a>
-        <a href="https://x.com/BottoneMatthew" class="bar-slot" title="X" target="_blank">
-            <img src="RESOURCES/x_logo.png" alt="X">
-        </a>
-    </div>
+        </div>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        const swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
+        const swiper = new Swiper('.swiper', { /* ... swiper settings ... */ });
 
         const YOUTUBE_API_KEY = '[PASTE_YOUR_NEW_API_KEY_HERE]';
         const PLAYLIST_ID = '[PASTE_YOUR_NEW_PLAYLIST_ID_HERE]';
