@@ -1,3 +1,7 @@
+/* ========================================================= */
+/* =========== DIAGNOSTIC TEST STYLESHEET ================== */
+/* ========================================================= */
+
 :root {
     font-size: 16px;
 }
@@ -140,7 +144,7 @@ footer {
     color: white;
 }
 
-/* ==== STICKY IMAGE BAR ==== */
+/* ==== DIAGNOSTIC STICKY BAR ==== */
 .sticky-image-bar {
     position: fixed;
     bottom: 1rem;
@@ -150,30 +154,28 @@ footer {
     max-width: 700px;
     height: 70px;
     z-index: 1000;
-    background-image: url('../RESOURCES/mspaint_select_bar.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    
+    /* The background image has been REMOVED and replaced with a solid color for the test */
+    background-color: lightgray;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 3%;
 }
+
 .bar-slot {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 75%;
     flex-basis: 12%;
-    transition: background-color 0.2s ease;
+    
+    /* A solid color has been added to make the slots visible */
+    background-color: dimgray;
 }
-.bar-slot:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 4px;
-}
-/* THIS RULE MAKES THE ICONS VISIBLE */
+
+/* The images are hidden for this test */
 .bar-slot img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    display: none;
 }
