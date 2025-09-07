@@ -58,15 +58,39 @@
     </footer>
     
     <div class="sticky-image-bar">
-        </div>
+        <a href="#" class="bar-slot" title="Spotify"> <img src="RESOURCES/spotify_logo.png" alt="Spotify"></a>
+        <a href="https://music.apple.com/us/artist/emby-matthews/1546039557" class="bar-slot" title="Apple Music" target="_blank"><img src="RESOURCES/apple_music_logo.png" alt="Apple Music"></a>
+        <a href="https://emby.bandcamp.com/music" class="bar-slot" title="Bandcamp" target="_blank"><img src="RESOURCES/bandcamp_logo.png" alt="Bandcamp"></a>
+        <a href="https://www.youtube.com/@EMBYMATTHEWS" class="bar-slot" title="YouTube" target="_blank"><img src="RESOURCES/youtube_logo.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/embymatthews" class="bar-slot" title="Instagram" target="_blank"><img src="RESOURCES/instagram_logo.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@embymatthews" class="bar-slot" title="TikTok" target="_blank"><img src="RESOURCES/tiktok_logo_with_lozenge.png" alt="TikTok"></a>
+        <a href="https://x.com/BottoneMatthew" class="bar-slot" title="X" target="_blank"><img src="RESOURCES/x_logo.png" alt="X"></a>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
-        const swiper = new Swiper('.swiper', { /* ... swiper settings ... */ });
+        // Swiper initialization
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
 
-        const YOUTUBE_API_KEY = '[PASTE_YOUR_NEW_API_KEY_HERE]';
-        const PLAYLIST_ID = '[PASTE_YOUR_NEW_PLAYLIST_ID_HERE]';
+        // YouTube auto-update script
+        const YOUTUBE_API_KEY = 'YOUR_API_KEY'; // Replace with your new, secure API Key
+        const PLAYLIST_ID = 'YOUR_PLAYLIST_ID'; // Replace with your new, public Playlist ID (starts with PL)
 
         const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${YOUTUBE_API_KEY}`;
 
@@ -75,10 +99,15 @@
             .then(data => {
                 if (data.items && data.items.length > 0) {
                     const latestVideoId = data.items[0].snippet.resourceId.videoId;
-                    document.getElementById('latest-youtube-video').src = `https://www.youtube.com/embed/${latestVideoId}`;
+                    const youtubePlayer = document.getElementById('latest-youtube-video');
+                    youtubePlayer.src = `https://www.youtube.com/embed/${latestVideoId}`;
+                } else {
+                     console.log("Could not find videos in the specified playlist. Check that the Playlist ID is correct, the playlist is Public, and the API Key is valid and has no restrictions.");
                 }
             })
-            .catch(error => console.error('Error fetching YouTube video:', error));
+            .catch(error => {
+                console.error('Error fetching YouTube video:', error);
+            });
     </script>
 
 </body>
