@@ -159,8 +159,9 @@ footer {
     align-items: center;
 }
 .bar-slot {
-    width: 60px;
-    height: 50px;
+    /* The dimensions of the slot itself (the clickable area) */
+    width: 60px; /* You can adjust this width if icons are too crowded/too small */
+    height: 50px; /* You can adjust this height */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -170,8 +171,9 @@ footer {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
 }
+/* THIS IS THE FIX: The image inside the slot will now scale down to fit perfectly. */
 .bar-slot img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    max-width: 90%; /* Limits the image to 90% of its parent slot's width */
+    max-height: 90%; /* Limits the image to 90% of its parent slot's height */
+    object-fit: contain; /* Ensures the entire image is visible without cropping */
 }
