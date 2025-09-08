@@ -9,11 +9,132 @@ body {
     text-align: center;
     padding-bottom: 100px; 
 }
-/* ... (all previous CSS code from the top of the file) ... */
-main, .content-section, h2, h3, header, nav, #hero, .hero-logo, #music, footer, @media, .swiper, .swiper-slide, .slide-caption, .swiper-button-next, .swiper-button-prev {
-    /* ... (all the styles for these sections remain the same) ... */
+main {
+    text-align: center;
 }
-/* ... (make sure all the styles from the previous version are here) ... */
+.content-section {
+    padding: 4rem 1.25rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+header {
+    padding: 1.25rem;
+}
+nav {
+    display: flex;
+    justify-content: center;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    transition: background-color 0.3s;
+}
+nav ul li a:hover {
+    background-color: #ddd;
+}
+#hero {
+    padding: 1rem 1.25rem 0.5rem 1.25rem;
+}
+.hero-logo {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    max-width: 350px;
+}
+#music {
+    padding-top: 0.5rem;
+    padding-bottom: 2.5rem;
+    background-color: #f7f7f7;
+}
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 2.5rem;
+    border-top: 1px solid #ddd;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    :root {
+        font-size: 14px;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block;
+    }
+    .hero-logo {
+        max-width: 80%;
+    }
+}
+
+/* ==== SWIPER CAROUSEL STYLES ==== */
+.swiper {
+    width: 100%;
+    max-width: 900px;
+    height: 500px;
+    margin: 0 auto;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide a {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide img, .swiper-slide iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slide-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.swiper-slide a:hover .slide-caption {
+    opacity: 1;
+}
+.swiper-button-next, .swiper-button-prev {
+    color: white;
+}
 
 /* ==== STICKY IMAGE BAR ==== */
 .sticky-image-bar {
@@ -25,37 +146,31 @@ main, .content-section, h2, h3, header, nav, #hero, .hero-logo, #music, footer, 
     max-width: 700px;
     height: 70px;
     z-index: 1000;
-    
     background-image: url('../RESOURCES/mspaint_select_bar.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-
-    /* These center the new .icon-wrapper */
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-/* NEW: This wrapper contains the icons and sizes them to the visible background */
 .icon-wrapper {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 98%; /* Sized to fit just inside the background image's border */
+    width: 98%;
     height: 100%;
 }
-
 .bar-slot {
-    height: 70%; /* Each slot is 70% of the bar's height */
-    flex-basis: 14%; /* Each of the 7 slots gets an equal share of the wrapper width */
+    height: 70%;
+    flex-basis: 14%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: transform 0.2s ease;
 }
 .bar-slot:hover {
-    transform: scale(1.1); /* A subtle zoom effect on hover */
+    transform: scale(1.1);
 }
 .bar-slot img {
     max-width: 90%;
