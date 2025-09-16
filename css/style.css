@@ -165,7 +165,7 @@ footer {
 }
 .bar-slot {
     height: 80%;
-    width: 80%; /* The slot will be 80% of the width of its grid column */
+    width: 50%; /* The slot will be 80% of the width of its grid column */
     display: flex;
     align-items: center;
     justify-content: center;
