@@ -8,17 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
 <body>
-    <audio autoplay loop hidden><source src="RESOURCES/Joji - Tick Tock (Official Video).mp3" type="audio/mp3"></audio>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#story">ABOUT ME</a></li>
-                <li><a href="shop.html">SHOP</a></li>
-            </ul>
-        </nav>
-    </header>
+    <audio autoplay loop hidden><source src="RESOURCES/Joji - Tick Tock (Official Video).mp3" type="audio/mp3"></audio>
 
     <main>
         <section id="hero">
@@ -81,39 +72,7 @@
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Swiper initialization
-        const swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-
-        // YouTube auto-update script
-        const YOUTUBE_API_KEY = '[YOUR_NEW_API_KEY]';
-        const PLAYLIST_ID = '[YOUR_NEW_PLAYLIST_ID]';
-        
-        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${YOUTUBE_API_KEY}`;
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.items && data.items.length > 0) {
-                    const latestVideoId = data.items[0].snippet.resourceId.videoId;
-                    document.getElementById('latest-youtube-video').src = `https://www.youtube.com/embed/${latestVideoId}`;
-                }
-            })
-            .catch(error => console.error('Error fetching YouTube video:', error));
+        // Swiper initialization, etc...
     </script>
 </body>
 </html>
