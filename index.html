@@ -73,7 +73,13 @@
 
     <script>
         // Swiper initialization
-        const swiper = new Swiper('.swiper', { /* ... your swiper settings ... */ });
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: { delay: 4000, disableOnInteraction: false },
+            pagination: { el: '.swiper-pagination', clickable: true },
+            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        });
 
         // YouTube auto-update script
         const YOUTUBE_API_KEY = '[YOUR_NEW_API_KEY]';
