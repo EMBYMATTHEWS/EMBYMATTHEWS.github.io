@@ -71,8 +71,41 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
-        // Swiper initialization, etc...
+        // Swiper initialization
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // YouTube auto-update script
+        const YOUTUBE_API_KEY = '[YOUR_NEW_API_KEY]';
+        const PLAYLIST_ID = '[YOUR_NEW_PLAYLIST_ID]';
+
+        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${YOUTUBE_API_KEY}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.items && data.items.length > 0) {
+                    const latestVideoId = data.items[0].snippet.resourceId.videoId;
+                    document.getElementById('latest-youtube-video').src = `https://www.youtube.com/embed/${latestVideoId}`;
+                }
+            })
+            .catch(error => console.error('Error fetching YouTube video:', error));
     </script>
 </body>
 </html>
