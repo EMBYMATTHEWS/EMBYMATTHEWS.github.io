@@ -32,13 +32,36 @@
             <div class="swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="https://too.fm/kevlgv" target="_blank">
-                            <img src="RESOURCES/world wide stranger.png" alt="World Wide Stranger Album Cover">
-                            <div class="slide-caption">World Wide Stranger - Listen on All Platforms</div>
-                        </a>
+                        <div class="y2k-window">
+                            <div class="window-title-bar">
+                                <span class="title-text">NowPlaying.exe - World Wide Stranger</span>
+                                <div class="window-buttons">
+                                    <div class="window-button">-</div>
+                                    <div class="window-button">[]</div>
+                                    <div class="window-button">X</div>
+                                </div>
+                            </div>
+                            <div class="window-content">
+                                <a href="https://too.fm/kevlgv" target="_blank">
+                                    <img src="RESOURCES/world wide stranger.png" alt="World Wide Stranger Album Cover">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <div class="swiper-slide">
-                        <iframe id="latest-youtube-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="y2k-window">
+                            <div class="window-title-bar">
+                                <span class="title-text">YouTube.exe - Latest Video</span>
+                                <div class="window-buttons">
+                                    <div class="window-button">-</div>
+                                    <div class="window-button">[]</div>
+                                    <div class="window-button">X</div>
+                                </div>
+                            </div>
+                            <div class="window-content black-bg">
+                                <iframe id="latest-youtube-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>
@@ -57,45 +80,17 @@
         <p>© 2025 Emby Matthews. All Rights Reserved.</p>
     </footer>
     
-    <div class="sticky-image-bar">
-        <div class="icon-wrapper">
-            <a href="#" class="bar-slot" title="Spotify"> <img src="RESOURCES/spotify_logo.png" alt="Spotify"></a>
-            <a href="https://music.apple.com/us/artist/emby-matthews/1546039557" class="bar-slot" title="Apple Music" target="_blank"><img src="RESOURCES/apple_music_logo.png" alt="Apple Music"></a>
-            <a href="https://emby.bandcamp.com/music" class="bar-slot" title="Bandcamp" target="_blank"><img src="RESOURCES/bandcamp_logo.png" alt="Bandcamp"></a>
-            <a href="https://www.youtube.com/@EMBYMATTHEWS" class="bar-slot" title="YouTube" target="_blank"><img src="RESOURCES/youtube_logo.png" alt="YouTube"></a>
-            <a href="https://www.instagram.com/embymatthews" class="bar-slot" title="Instagram" target="_blank"><img src="RESOURCES/instagram_logo.png" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@embymatthews" class="bar-slot" title="TikTok" target="_blank"><img src="RESOURCES/tiktok_logo_with_lozenge.png" alt="TikTok"></a>
-            <a href="https://x.com/BottoneMatthew" class="bar-slot" title="X" target="_blank"><img src="RESOURCES/x_logo.png" alt="X"></a>
-        </div>
-    </div>
+    <div class="sticky-image-bar"> ... </div>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
         // Swiper initialization
-        const swiper = new Swiper('.swiper', {
-            direction: 'horizontal',
-            loop: true,
-            autoplay: { delay: 4000, disableOnInteraction: false },
-            pagination: { el: '.swiper-pagination', clickable: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-        });
-
+        const swiper = new Swiper('.swiper', { /* ... swiper settings ... */ });
         // YouTube auto-update script
         const YOUTUBE_API_KEY = '[YOUR_NEW_API_KEY]';
         const PLAYLIST_ID = '[YOUR_NEW_PLAYLIST_ID]';
-
-        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${YOUTUBE_API_KEY}`;
-
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                if (data.items && data.items.length > 0) {
-                    const latestVideoId = data.items[0].snippet.resourceId.videoId;
-                    document.getElementById('latest-youtube-video').src = `https://www.youtube.com/embed/${latestVideoId}`;
-                }
-            })
-            .catch(error => console.error('Error fetching YouTube video:', error));
+        /* ... youtube fetch script ... */
     </script>
 
 </body>
