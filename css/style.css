@@ -28,7 +28,7 @@ footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; font-size: 0.
 /* ==== Y2K SWIPER CAROUSEL STYLES ==== */
 .carousel-wrapper {
     position: relative;
-    max-width: 850px; /* Wider than the swiper to make room for buttons */
+    max-width: 850px;
     margin: 0 auto;
 }
 .swiper { width: 100%; max-width: 700px; height: 500px; margin: 0 auto; }
@@ -75,13 +75,12 @@ footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; font-size: 0.
 }
 .window-content img, .window-content iframe { width: 100%; height: 100%; display: block; object-fit: contain; }
 
-/* FIX for Carousel Buttons */
 .swiper-button-prev, .swiper-button-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     color: white;
-    --swiper-navigation-size: 30px; /* Makes the arrows a bit smaller */
+    --swiper-navigation-size: 30px;
 }
 .swiper-button-prev { left: 0; }
 .swiper-button-next { right: 0; }

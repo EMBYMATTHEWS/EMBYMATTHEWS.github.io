@@ -10,48 +10,49 @@
 <body>
     <audio autoplay loop hidden><source src="RESOURCES/Joji - Tick Tock (Official Video).mp3" type="audio/mp3"></audio>
 
-    <header><nav><ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#story">ABOUT ME</a></li>
-        <li><a href="shop.html">SHOP</a></li>
-    </ul></nav></header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#story">ABOUT ME</a></li>
+                <li><a href="shop.html">SHOP</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
-        <section id="hero"><img src="RESOURCES/EMBY MATTHEWS LOGO.png" alt="Emby Matthews Logo" class="hero-logo"></section>
+        <section id="hero">
+            <img src="RESOURCES/EMBY MATTHEWS LOGO.png" alt="Emby Matthews Logo" class="hero-logo">
+        </section>
 
         <section id="music">
             <div class="carousel-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
-                        
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Now Playing - World Wide Stranger.mp3</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
                                 <div class="window-content"><a href="https://too.fm/kevlgv" target="_blank"><img src="RESOURCES/world wide stranger.png" alt="World Wide Stranger Album Cover"></a></div>
                             </div>
                         </div>
-
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">YouTube - EMBYMATTHEWS</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
                                 <div class="window-content"><iframe id="latest-youtube-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                             </div>
                         </div>
-
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Merch.exe - Official Store</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
                                 <div class="window-content"><a href="shop.html"><img src="RESOURCES/merch-placeholder.png" alt="Official Merch"></a></div>
                             </div>
                         </div>
-
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Press.doc - Featured Article</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
                                 <div class="window-content"><a href="#" target="_blank"><img src="RESOURCES/article-placeholder.png" alt="Featured Article"></a></div>
                             </div>
                         </div>
-
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -68,16 +69,51 @@
 
     <footer><p>© 2025 Emby Matthews. All Rights Reserved.</p></footer>
     
-    <div class="y2k-taskbar"> ... </div>
+    <div class="y2k-taskbar">
+        <a href="#" class="taskbar-slot" title="Spotify"> <img src="RESOURCES/spotify_logo.png" alt="Spotify"></a>
+        <a href="https://music.apple.com/us/artist/emby-matthews/1546039557" class="taskbar-slot" title="Apple Music" target="_blank"><img src="RESOURCES/apple_music_logo.png" alt="Apple Music"></a>
+        <a href="https://emby.bandcamp.com/music" class="taskbar-slot" title="Bandcamp" target="_blank"><img src="RESOURCES/bandcamp_logo.png" alt="Bandcamp"></a>
+        <a href="https://www.youtube.com/@EMBYMATTHEWS" class="taskbar-slot" title="YouTube" target="_blank"><img src="RESOURCES/youtube_logo.png" alt="YouTube"></a>
+        <a href="https://www.instagram.com/embymatthews" class="taskbar-slot" title="Instagram" target="_blank"><img src="RESOURCES/instagram_logo.png" alt="Instagram"></a>
+        <a href="https://www.tiktok.com/@embymatthews" class="taskbar-slot" title="TikTok" target="_blank"><img src="RESOURCES/tiktok_logo_with_lozenge.png" alt="TikTok"></a>
+        <a href="https://x.com/BottoneMatthew" class="taskbar-slot" title="X" target="_blank"><img src="RESOURCES/x_logo.png" alt="X"></a>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Swiper initialization...
-        const swiper = new Swiper('.swiper', { /* ... */ });
-        // YouTube auto-update script...
+        // Swiper initialization
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+
+        // YouTube auto-update script
         const YOUTUBE_API_KEY = '[YOUR_NEW_API_KEY]';
         const PLAYLIST_ID = '[YOUR_NEW_PLAYLIST_ID]';
-        // ... (fetch logic remains the same)
+        
+        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${YOUTUBE_API_KEY}`;
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                if (data.items && data.items.length > 0) {
+                    const latestVideoId = data.items[0].snippet.resourceId.videoId;
+                    document.getElementById('latest-youtube-video').src = `https://www.youtube.com/embed/${latestVideoId}`;
+                }
+            })
+            .catch(error => console.error('Error fetching YouTube video:', error));
     </script>
 </body>
 </html>
