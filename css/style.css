@@ -1,130 +1,69 @@
-:root {
-    font-size: 16px;
-}
+:root { font-size: 16px; }
 body {
     background-color: #008080;
     margin: 0;
     font-family: "Tahoma", "MS Sans Serif", sans-serif;
-    color: black;
+    color: white; /* Changed to white for better contrast */
     padding-bottom: 70px;
 }
-main {
-    /* Main content container is now full-width with padding */
-    padding: 0 2rem;
+main, header {
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 .content-section {
     padding: 2rem 0;
-    color: white;
     text-align: left;
 }
-h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-}
-header {
-    /* Header is now full-width with padding */
-    padding: 1.25rem 2rem;
-}
-nav {
-    display: flex;
-    justify-content: flex-start; /* Left-align nav */
-}
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: flex-start; /* Changed from center */
-    gap: 1rem;
-}
-nav ul li a {
-    color: white; text-decoration: none; padding: 0.6rem 1rem;
-    background-color: #C0C0C0;
-    border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF;
-    border-right: 2px solid #000000; border-bottom: 2px solid #000000;
-}
-nav ul li a:active {
-    border-top-color: #000; border-left-color: #000;
-    border-right-color: #fff; border-bottom-color: #fff;
-}
-#hero {
-    padding: 1rem 0 0.5rem 0;
-    text-align: left;
-}
-.hero-logo {
-    display: block;
-    margin: 0;
-    height: auto;
-    max-width: 350px;
-}
-#music {
-    padding-top: 0.5rem;
-    padding-bottom: 2.5rem;
-}
-footer {
-    text-align: center;
-    padding: 1.25rem;
-    margin-top: 2.5rem;
-    font-size: 0.875rem;
-    color: white;
-}
-/* === MOBILE LAYOUT FIXES === */
+h2 { font-size: clamp(2rem, 4vw, 3rem); }
+
+header { padding-top: 1.25rem; padding-bottom: 1.25rem; }
+nav { display: flex; justify-content: flex-start; }
+nav ul { list-style-type: none; margin: 0; padding: 0; display: flex; flex-direction: row; align-items: center; gap: 1rem; }
+nav ul li a { color: black; text-decoration: none; padding: 0.6rem 1rem; background-color: #C0C0C0; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; }
+nav ul li a:active { border-top-color: #000; border-left-color: #000; border-right-color: #fff; border-bottom-color: #fff; }
+
+#hero { padding: 1rem 0 0.5rem 0; }
+.hero-logo { display: block; margin: 0; height: auto; max-width: 350px; }
+#music { padding-top: 0.5rem; padding-bottom: 2.5rem; }
+
+footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; font-size: 0.875rem; color: white; }
+
 @media (max-width: 768px) {
     :root { font-size: 14px; }
-    main { padding: 0 1rem; }
-    header { padding: 1.25rem 1rem; }
-    /* NEW: Mobile navigation is now a compact horizontal row */
-    nav ul {
-        flex-direction: row;
-        align-items: center;
-        gap: 0.5rem;
-    }
-    nav ul li a {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-    }
+    main, header { padding-left: 1rem; padding-right: 1rem; }
+    nav ul { gap: 0.5rem; } /* Reduce gap for smaller screens */
+    nav ul li a { padding: 0.5rem; font-size: 0.9rem; }
 }
 
 /* ==== Y2K SWIPER CAROUSEL STYLES ==== */
-.carousel-wrapper {
-    position: relative;
-    /* Carousel is now full-width */
-}
-.swiper { width: 100%; height: 500px; margin: 0; }
+.carousel-wrapper { position: relative; }
+.swiper { width: 100%; height: 500px; }
 .swiper-slide { background: transparent; display: flex; justify-content: center; align-items: center; }
 .y2k-window {
     background-color: #C0C0C0;
     border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF;
     border-right: 2px solid #000000; border-bottom: 2px solid #000000;
     box-shadow: 2px 2px 0px #000000;
-    width: 90%; height: 90%; padding: 3px; display: flex; flex-direction: column;
-    margin: 0 auto; /* Center the window within the slide */
+    width: 90%; max-width: 700px; height: 90%; padding: 3px; display: flex; flex-direction: column; margin: 0 auto;
 }
 .title-bar {
-    background: linear-gradient(to right, #000080, #1084d0);
-    color: white; padding: 3px 5px; display: flex; justify-content: space-between;
-    align-items: center; font-weight: bold; font-size: 14px; text-align: left;
+    background: linear-gradient(to right, #000080, #1084d0); color: white;
+    padding: 3px 5px; display: flex; justify-content: space-between; align-items: center;
+    font-weight: bold; font-size: 14px; text-align: left;
 }
 .title-buttons { display: flex; gap: 3px; }
 .title-buttons span {
     width: 16px; height: 16px; background-color: #C0C0C0;
     border-top: 1px solid #FFFFFF; border-left: 1px solid #FFFFFF;
     border-right: 1px solid #000000; border-bottom: 1px solid #000000;
-    font-size: 12px; line-height: 16px; text-align: center;
-    font-family: "Fixedsys", monospace;
+    font-size: 12px; line-height: 16px; text-align: center; font-family: "Fixedsys", monospace;
 }
 .title-buttons span.close-btn { font-weight: bold; }
-.window-content {
-    flex-grow: 1; border: 2px solid; border-color: #808080 #FFFFFF #FFFFFF #808080;
-    margin-top: 3px; background: black;
-}
+.window-content { flex-grow: 1; border: 2px solid; border-color: #808080 #FFFFFF #FFFFFF #808080; margin-top: 3px; background: black; }
 .window-content img, .window-content iframe { width: 100%; height: 100%; display: block; object-fit: contain; }
-
-.swiper-button-prev, .swiper-button-next {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    color: white; --swiper-navigation-size: 30px;
-}
-.swiper-button-prev { left: 0px; }
-.swiper-button-next { right: 0px; }
+.swiper-button-prev, .swiper-button-next { position: absolute; top: 50%; transform: translateY(-50%); color: white; --swiper-navigation-size: 30px; }
+.swiper-button-prev { left: 10px; }
+.swiper-button-next { right: 10px; }
 .swiper-pagination-bullet-active { background: white !important; }
 
 /* ==== Y2K STICKY TASKBAR ==== */
@@ -140,4 +79,4 @@ footer {
     display: flex; align-items: center; justify-content: center; transition: all 0.1s linear;
 }
 .taskbar-slot:active { border-top-color: #000; border-left-color: #000; border-right-color: #fff; border-bottom-color: #fff; }
-.task-slot img { max-width: 80%; max-height: 80%; object-fit: contain; }
+.taskbar-slot img { max-width: 80%; max-height: 80%; object-fit: contain; }
