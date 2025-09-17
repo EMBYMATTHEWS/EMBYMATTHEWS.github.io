@@ -2,136 +2,105 @@
     font-size: 16px;
 }
 body {
-    background-color: white;
+    background-color: #008080; /* Classic Windows Teal background */
     margin: 0;
-    font-family: 'Arial', sans-serif; /* A more neutral font for now */
+    font-family: "Tahoma", "MS Sans Serif", sans-serif; /* Y2K era fonts */
     color: black;
-    text-align: center;
-    padding-bottom: 100px; 
+    padding-bottom: 70px; /* Space for the taskbar */
 }
-/* ... (General styles for main, sections, headings, header, nav, hero, footer, etc. remain the same) ... */
+/* ... (main, content-section, h2, header, nav styles are the same) ... */
 #hero { padding: 1rem 1.25rem 0.5rem 1.25rem; }
 .hero-logo { display: block; margin: 0 auto; height: auto; max-width: 350px; }
-#music { padding-top: 0.5rem; padding-bottom: 2.5rem; } /* No background color needed now */
-footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; border-top: 1px solid #ddd; font-size: 0.875rem; }
-@media (max-width: 768px) { /* ... mobile styles ... */ }
+#music { padding-top: 0.5rem; padding-bottom: 2.5rem; }
+footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; border-top: 2px solid #000; font-size: 0.875rem; color: white; }
+@media (max-width: 768px) { /* ... (media query is the same) ... */ }
 
 /* ==== Y2K SWIPER CAROUSEL STYLES ==== */
-.swiper {
-    width: 100%;
-    max-width: 800px; /* Adjusted size */
-    height: 550px; /* Adjusted size */
-    margin: 0 auto;
-}
-.swiper-slide {
-    background: none; /* Remove the black background from the slide itself */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem; /* Add padding around the window */
-    box-sizing: border-box; /* Ensures padding is included in the element's total width and height */
-}
+.swiper { width: 100%; max-width: 700px; height: 500px; margin: 0 auto; }
+.swiper-slide { background: transparent; display: flex; justify-content: center; align-items: center; }
 .y2k-window {
-    width: 100%;
-    height: 100%;
-    background-color: #C0C0C0; /* Classic Windows grey */
-    border: 2px solid;
-    border-color: #FFFFFF #808080 #808080 #FFFFFF; /* 3D border effect */
+    background-color: #C0C0C0; /* Classic window grey */
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
     box-shadow: 2px 2px 0px #000000;
+    width: 90%;
+    height: 90%;
     padding: 3px;
     display: flex;
     flex-direction: column;
-    font-family: 'Pixelated MS Sans Serif', Arial; /* For a more authentic feel, requires font import */
 }
-.window-title-bar {
+.title-bar {
     background: linear-gradient(to right, #000080, #1084d0); /* Classic blue gradient */
-    padding: 4px 5px;
+    color: white;
+    padding: 3px 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
     font-weight: bold;
-    text-shadow: 1px 1px #000;
+    font-size: 14px;
 }
-.window-buttons {
-    display: flex;
-    gap: 3px;
-}
-.window-button {
+.title-buttons { display: flex; gap: 3px; }
+.title-buttons span {
     width: 16px;
     height: 16px;
     background-color: #C0C0C0;
-    border: 1px solid;
-    border-color: #FFFFFF #808080 #808080 #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
     font-size: 12px;
-    font-weight: bold;
-    box-shadow: 1px 1px 0px #000000;
+    line-height: 16px;
+    text-align: center;
+    font-family: "Fixedsys", monospace;
 }
+.title-buttons span.close-btn { font-weight: bold; }
 .window-content {
-    flex-grow: 1; /* Makes content area fill the remaining space */
-    margin: 5px;
+    flex-grow: 1;
     border: 2px solid;
-    border-color: #808080 #FFFFFF #FFFFFF #808080; /* Inset border effect */
-    padding: 10px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-color: #000000 #FFFFFF #FFFFFF #000000; /* Inset border */
+    margin-top: 3px;
+    background: black;
 }
-.window-content.black-bg {
-    background-color: black;
-}
-.window-content img, .window-content iframe {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-.swiper-button-next, .swiper-button-prev { color: #000080; } /* Match the new theme */
-.swiper-pagination-bullet-active { background: #000080; } /* Match the new theme */
+.window-content img, .window-content iframe { width: 100%; height: 100%; display: block; object-fit: contain; }
+.swiper-button-next, .swiper-button-prev { color: white; }
 
-/* ==== STICKY IMAGE BAR (SIMPLIFIED SPACING) ==== */
-.sticky-image-bar {
+/* ==== Y2K STICKY TASKBAR ==== */
+.y2k-taskbar {
     position: fixed;
-    bottom: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 700px;
-    height: 70px;
-    z-index: 1000;
-    background-image: url('../RESOURCES/mspaint_select_bar.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    display: flex;
-    justify-content: center; /* Center the group of icons */
-    align-items: center;
-}
-.icon-wrapper {
-    display: flex;
-    justify-content: center; /* Center items within the wrapper */
-    align-items: center;
+    bottom: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 50px;
+    background-color: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    gap: 8px;
 }
-.bar-slot {
+.taskbar-slot {
+    height: 40px;
+    width: 40px;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70%;
-    width: 14%; /* Give each icon a consistent width */
-    margin: 0 3px; /* THIS IS THE VALUE TO CHANGE for spacing */
-    transition: transform 0.2s ease;
+    transition: all 0.1s linear;
 }
-.bar-slot:hover {
-    transform: scale(1.1);
+.taskbar-slot:active { /* Pressed-in effect */
+    border-top-color: #000;
+    border-left-color: #000;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
 }
-.bar-slot img {
-    max-width: 90%;
-    max-height: 90%;
+.taskbar-slot img {
+    max-width: 80%;
+    max-height: 80%;
     object-fit: contain;
 }
