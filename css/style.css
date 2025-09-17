@@ -2,24 +2,87 @@
     font-size: 16px;
 }
 body {
-    background-color: #008080; /* Classic Windows Teal background */
+    background-color: #008080;
     margin: 0;
-    font-family: "Tahoma", "MS Sans Serif", sans-serif; /* Y2K era fonts */
+    font-family: "Tahoma", "MS Sans Serif", sans-serif;
     color: black;
-    padding-bottom: 70px; /* Space for the taskbar */
+    padding-bottom: 70px;
 }
-/* ... (main, content-section, h2, header, nav styles are the same) ... */
-#hero { padding: 1rem 1.25rem 0.5rem 1.25rem; }
-.hero-logo { display: block; margin: 0 auto; height: auto; max-width: 350px; }
-#music { padding-top: 0.5rem; padding-bottom: 2.5rem; }
-footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; border-top: 2px solid #000; font-size: 0.875rem; color: white; }
-@media (max-width: 768px) { /* ... (media query is the same) ... */ }
+main {
+    text-align: center;
+}
+.content-section {
+    padding: 4rem 1.25rem;
+    max-width: 900px;
+    margin: 0 auto;
+    color: white; /* Added for better contrast on teal */
+}
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+header {
+    padding: 1.25rem;
+}
+nav {
+    display: flex;
+    justify-content: center;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    background-color: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
+}
+nav ul li a:active {
+    border-top-color: #000;
+    border-left-color: #000;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+}
+#hero {
+    padding: 1rem 1.25rem 0.5rem 1.25rem;
+}
+.hero-logo {
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    max-width: 350px;
+}
+#music {
+    padding-top: 0.5rem;
+    padding-bottom: 2.5rem;
+}
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 2.5rem;
+    font-size: 0.875rem;
+    color: white;
+}
+@media (max-width: 768px) {
+    :root { font-size: 14px; }
+    nav ul { flex-direction: column; align-items: center; gap: 0.5rem; }
+    nav ul li { width: 100%; max-width: 200px; text-align: center; }
+    nav ul li a { display: block; }
+}
 
 /* ==== Y2K SWIPER CAROUSEL STYLES ==== */
 .swiper { width: 100%; max-width: 700px; height: 500px; margin: 0 auto; }
 .swiper-slide { background: transparent; display: flex; justify-content: center; align-items: center; }
 .y2k-window {
-    background-color: #C0C0C0; /* Classic window grey */
+    background-color: #C0C0C0;
     border-top: 2px solid #FFFFFF;
     border-left: 2px solid #FFFFFF;
     border-right: 2px solid #000000;
@@ -32,7 +95,7 @@ footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; border-top: 2
     flex-direction: column;
 }
 .title-bar {
-    background: linear-gradient(to right, #000080, #1084d0); /* Classic blue gradient */
+    background: linear-gradient(to right, #000080, #1084d0);
     color: white;
     padding: 3px 5px;
     display: flex;
@@ -40,6 +103,7 @@ footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; border-top: 2
     align-items: center;
     font-weight: bold;
     font-size: 14px;
+    text-align: left;
 }
 .title-buttons { display: flex; gap: 3px; }
 .title-buttons span {
@@ -59,12 +123,12 @@ footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; border-top: 2
 .window-content {
     flex-grow: 1;
     border: 2px solid;
-    border-color: #000000 #FFFFFF #FFFFFF #000000; /* Inset border */
+    border-color: #808080 #FFFFFF #FFFFFF #808080;
     margin-top: 3px;
     background: black;
 }
 .window-content img, .window-content iframe { width: 100%; height: 100%; display: block; object-fit: contain; }
-.swiper-button-next, .swiper-button-prev { color: white; }
+.swiper-button-next, .swiper-button-prev, .swiper-pagination-bullet-active { color: white !important; background: #000080 !important; }
 
 /* ==== Y2K STICKY TASKBAR ==== */
 .y2k-taskbar {
@@ -93,7 +157,7 @@ footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; border-top: 2
     justify-content: center;
     transition: all 0.1s linear;
 }
-.taskbar-slot:active { /* Pressed-in effect */
+.taskbar-slot:active {
     border-top-color: #000;
     border-left-color: #000;
     border-right-color: #fff;
