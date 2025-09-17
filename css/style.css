@@ -1,4 +1,6 @@
-:root { font-size: 16px; }
+:root {
+    font-size: 16px;
+}
 body {
     background-color: #008080;
     margin: 0;
@@ -6,56 +8,94 @@ body {
     color: black;
     padding-bottom: 70px;
 }
-main { text-align: center; }
-.content-section { padding: 4rem 1.25rem; max-width: 900px; margin: 0 auto; color: white; }
-h2 { font-size: clamp(2rem, 4vw, 3rem); }
-header { padding: 1.25rem; }
-nav { display: flex; justify-content: center; }
-nav ul { list-style-type: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 1rem; }
-nav ul li a { color: white; text-decoration: none; padding: 0.6rem 1rem; background-color: #C0C0C0; border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF; border-right: 2px solid #000000; border-bottom: 2px solid #000000; }
-nav ul li a:active { border-top-color: #000; border-left-color: #000; border-right-color: #fff; border-bottom-color: #fff; }
-#hero { padding: 1rem 1.25rem 0.5rem 1.25rem; }
-.hero-logo { display: block; margin: 0 auto; height: auto; max-width: 350px; }
-#music { padding-top: 0.5rem; padding-bottom: 2.5rem; }
-footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; font-size: 0.875rem; color: white; }
+main {
+    /* Main content container */
+    max-width: 900px;
+    margin: 0 auto; /* Center the main container on the page */
+    padding: 0 1.25rem;
+}
+.content-section {
+    padding: 2rem 0; /* Reduced padding */
+    color: white;
+    text-align: left; /* NEW: Left-align text in sections */
+}
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+header {
+    padding: 1.25rem;
+    max-width: 900px;
+    margin: 0 auto; /* Center the header container */
+}
+nav {
+    display: flex;
+    justify-content: flex-start; /* NEW: Left-align nav */
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+nav ul li a {
+    color: white; text-decoration: none; padding: 0.6rem 1rem;
+    background-color: #C0C0C0;
+    border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #000000; border-bottom: 2px solid #000000;
+}
+nav ul li a:active {
+    border-top-color: #000; border-left-color: #000;
+    border-right-color: #fff; border-bottom-color: #fff;
+}
+#hero {
+    padding: 1rem 0 0.5rem 0; /* NEW: Reduced padding for mobile */
+    text-align: left; /* NEW: Left-align logo */
+}
+.hero-logo {
+    display: block;
+    margin: 0; /* NEW: Remove auto margin */
+    height: auto;
+    max-width: 350px;
+}
+#music {
+    padding-top: 0.5rem;
+    padding-bottom: 2.5rem;
+}
+footer {
+    text-align: center;
+    padding: 1.25rem;
+    margin-top: 2.5rem;
+    font-size: 0.875rem;
+    color: white;
+}
 @media (max-width: 768px) {
     :root { font-size: 14px; }
-    nav ul { flex-direction: column; align-items: center; gap: 0.5rem; }
-    nav ul li { width: 100%; max-width: 200px; text-align: center; }
-    nav ul li a { display: block; }
+    nav ul { flex-direction: column; align-items: flex-start; gap: 0.5rem; } /* NEW: align-items: flex-start */
+    nav ul li { width: auto; max-width: 200px; text-align: left; }
+    nav ul li a { display: inline-block; }
 }
 
 /* ==== Y2K SWIPER CAROUSEL STYLES ==== */
 .carousel-wrapper {
     position: relative;
     max-width: 850px;
-    margin: 0 auto;
+    margin: 0; /* NEW: Remove auto margin */
 }
-.swiper { width: 100%; max-width: 700px; height: 500px; margin: 0 auto; }
+.swiper { width: 100%; max-width: 700px; height: 500px; margin: 0; } /* NEW: Remove auto margin */
 .swiper-slide { background: transparent; display: flex; justify-content: center; align-items: center; }
 .y2k-window {
     background-color: #C0C0C0;
-    border-top: 2px solid #FFFFFF;
-    border-left: 2px solid #FFFFFF;
-    border-right: 2px solid #000000;
-    border-bottom: 2px solid #000000;
+    border-top: 2px solid #FFFFFF; border-left: 2px solid #FFFFFF;
+    border-right: 2px solid #000000; border-bottom: 2px solid #000000;
     box-shadow: 2px 2px 0px #000000;
-    width: 90%;
-    height: 90%;
-    padding: 3px;
-    display: flex;
-    flex-direction: column;
+    width: 90%; height: 90%; padding: 3px; display: flex; flex-direction: column;
 }
 .title-bar {
     background: linear-gradient(to right, #000080, #1084d0);
-    color: white;
-    padding: 3px 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 14px;
-    text-align: left;
+    color: white; padding: 3px 5px; display: flex; justify-content: space-between;
+    align-items: center; font-weight: bold; font-size: 14px; text-align: left;
 }
 .title-buttons { display: flex; gap: 3px; }
 .title-buttons span {
@@ -67,23 +107,16 @@ footer { text-align: center; padding: 1.25rem; margin-top: 2.5rem; font-size: 0.
 }
 .title-buttons span.close-btn { font-weight: bold; }
 .window-content {
-    flex-grow: 1;
-    border: 2px solid;
-    border-color: #808080 #FFFFFF #FFFFFF #808080;
-    margin-top: 3px;
-    background: black;
+    flex-grow: 1; border: 2px solid; border-color: #808080 #FFFFFF #FFFFFF #808080;
+    margin-top: 3px; background: black;
 }
 .window-content img, .window-content iframe { width: 100%; height: 100%; display: block; object-fit: contain; }
-
 .swiper-button-prev, .swiper-button-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    --swiper-navigation-size: 30px;
+    position: absolute; top: 50%; transform: translateY(-50%);
+    color: white; --swiper-navigation-size: 30px;
 }
-.swiper-button-prev { left: 0; }
-.swiper-button-next { right: 0; }
+.swiper-button-prev { left: -40px; } /* NEW: Adjusted position for left-align */
+.swiper-button-next { right: -40px; } /* NEW: Adjusted position for left-align */
 .swiper-pagination-bullet-active { background: white !important; }
 
 /* ==== Y2K STICKY TASKBAR ==== */
