@@ -83,19 +83,15 @@
             },
             navigation: {
                 nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
+                prevEl: '.swiper'
 
-        // YouTube auto-update script
-        const YOUTUBE_API_KEY = '[YOUR_NEW_API_KEY]';
-        const PLAYLIST_ID = '[YOUR_NEW_PLAYLIST_ID]';
+        // YouTube a
+        const YOUTUBE_API_KEY = '[885239369143]';
+        const PLAYLIST_ID = '[PLmJgCM7ogGzHHGYc0iKQTqMn9bJFYobdJ]';
 
-        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=1&key=${YOUTUBE_API_KEY}`;
-
-        fetch(apiUrl)
+        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults
             .then(response => response.json())
-            .then(data => {
+            .
                 if (data.items && data.items.length > 0) {
                     const latestVideoId = data.items[0].snippet.resourceId.videoId;
                     document.getElementById('latest-youtube-video').src = `https://www.youtube.com/embed/${latestVideoId}`;
