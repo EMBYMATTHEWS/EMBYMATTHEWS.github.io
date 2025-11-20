@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
+    <style>
+        .yt-facade {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+        .yt-facade img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        .yt-facade:hover img {
+            opacity: 1;
+        }
+        .play-btn {
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background-color: red;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .play-btn::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 15px solid white;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+        /* Ensure iframe fills the box when loaded */
+        #video-container iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,7 +65,7 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // REPLACE 'YOUR_PIXEL_ID_HERE' WITH YOUR ACTUAL PIXEL ID
+    // --- INSERT PIXEL ID HERE ---
     fbq('init', '527796238548717'); 
     fbq('track', 'PageView');
     </script>
@@ -38,42 +86,52 @@
             <div class="carousel-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
+                        
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Now Playing - embymatthews_heatitup.mp3</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
                                 <div class="window-content">
-                                    <a href="https://too.fm/rqngre4" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'SmartLink_Album', content_category: 'Music'});">
+                                    <a href="https://too.fm/rqngre4" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'Album_SmartLink', content_category: 'Music'});">
                                         <img src="RESOURCES/weareallgodslillolcows.jpg" alt="World Wide Stranger Album Cover">
                                     </a>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">YouTube - EMBYMATTHEWS</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
-                                <div class="window-content"><iframe id="latest-youtube-video" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                <div class="window-content" id="video-container">
+                                    <div id="yt-placeholder" class="yt-facade">
+                                        <div class="play-btn"></div>
+                                        <img id="yt-thumb-img" src="" alt="Loading Video...">
+                                    </div>
+                                </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Merch.exe - Official Store</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
                                 <div class="window-content">
-                                    <a href="https://bigthingsitw.com/products/emby-matthews-world-wide-stranger-cd?variant=43822236401734" onclick="fbq('track', 'InitiateCheckout', {content_name: 'World Wide Stranger CD'});">
+                                    <a href="https://bigthingsitw.com/products/emby-matthews-world-wide-stranger-cd?variant=43822236401734" target="_blank" onclick="fbq('track', 'InitiateCheckout', {content_name: 'World Wide Stranger CD', content_category: 'Merch'});">
                                         <img src="RESOURCES/merch_placeholder.webp" alt="Official Merch">
                                     </a>
                                 </div>
                             </div>
                         </div>
+
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Press.doc - Featured Article</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
                                 <div class="window-content">
-                                    <a href="#" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'Press_Article'});">
+                                    <a href="#" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'Featured_Article', content_category: 'Press'});">
                                         <img src="RESOURCES/article-placeholder.png" alt="Featured Article">
                                     </a>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -128,18 +186,11 @@
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev', 
-            },
-            // ADDED: Track when users slide to view different content
-            on: {
-                slideChange: function () {
-                    // Optional: You could track 'ViewContent' here for each slide if you wanted detailed analytics
-                    // console.log('Slide changed to: ' + this.realIndex); 
-                }
             }
         }); 
 
-        // YouTube API Logic
-        const YOUTUBE_API_KEY = '[885239369143]'; 
+        // --- UPDATED YOUTUBE LOGIC (FETCH + TRACKING) ---
+        const YOUTUBE_API_KEY = '[885239369143]'; // Ensure brackets are removed if not part of key
         const PLAYLIST_ID = '[PLmJgCM7ogGzHHGYc0iKQTqMn9bJFYobdJ]'; 
 
         const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&key=${YOUTUBE_API_KEY}&maxResults=1`;
@@ -148,8 +199,35 @@
             .then(response => response.json())
             .then(data => { 
                 if (data.items && data.items.length > 0) {
-                    const latestVideoId = data.items[0].snippet.resourceId.videoId;
-                    document.getElementById('latest-youtube-video').src = `https://www.youtube.com/embed/${latestVideoId}`;
+                    const snippet = data.items[0].snippet;
+                    const videoId = snippet.resourceId.videoId;
+                    
+                    // Get the best available thumbnail
+                    const thumbnailUrl = snippet.thumbnails.maxres ? snippet.thumbnails.maxres.url : 
+                                       (snippet.thumbnails.standard ? snippet.thumbnails.standard.url : snippet.thumbnails.high.url);
+
+                    // Set the thumbnail image
+                    const thumbImg = document.getElementById('yt-thumb-img');
+                    thumbImg.src = thumbnailUrl;
+
+                    // Add Click Event to the Placeholder
+                    const placeholder = document.getElementById('yt-placeholder');
+                    placeholder.onclick = function() {
+                        
+                        // 1. FIRE PIXEL EVENT
+                        if(typeof fbq === 'function') {
+                            fbq('track', 'ViewContent', {
+                                content_name: 'YouTube_Video_Play',
+                                content_id: videoId,
+                                content_category: 'Video'
+                            });
+                            console.log('Pixel Fired: YouTube Video Play');
+                        }
+
+                        // 2. REPLACE WITH IFRAME (Autoplay On)
+                        const container = document.getElementById('video-container');
+                        container.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+                    };
                 }
             })
             .catch(error => console.error('Error fetching YouTube video:', error));
