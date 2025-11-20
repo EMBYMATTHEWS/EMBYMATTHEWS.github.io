@@ -6,7 +6,25 @@
     <title>Emby Matthews - Official Website</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-</head>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    // REPLACE 'YOUR_PIXEL_ID_HERE' WITH YOUR ACTUAL PIXEL ID
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
 <body>
 
     <audio autoplay loop hidden><source src="RESOURCES/embymatthews_heatitup.mp3" type="audio/mp3"></audio>
@@ -23,7 +41,11 @@
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Now Playing - embymatthews_heatitup.mp3</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
-                                <div class="window-content"><a href="https://too.fm/rqngre4" target="_blank"><img src="RESOURCES/weareallgodslillolcows.jpg" alt="World Wide Stranger Album Cover"></a></div>
+                                <div class="window-content">
+                                    <a href="https://too.fm/rqngre4" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'SmartLink_Album', content_category: 'Music'});">
+                                        <img src="RESOURCES/weareallgodslillolcows.jpg" alt="World Wide Stranger Album Cover">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
@@ -35,13 +57,21 @@
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Merch.exe - Official Store</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
-                                <div class="window-content"><a href="https://bigthingsitw.com/products/emby-matthews-world-wide-stranger-cd?variant=43822236401734"><img src="RESOURCES/merch_placeholder.webp" alt="Official Merch"></a></div>
+                                <div class="window-content">
+                                    <a href="https://bigthingsitw.com/products/emby-matthews-world-wide-stranger-cd?variant=43822236401734" onclick="fbq('track', 'InitiateCheckout', {content_name: 'World Wide Stranger CD'});">
+                                        <img src="RESOURCES/merch_placeholder.webp" alt="Official Merch">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="swiper-slide">
                             <div class="y2k-window">
                                 <div class="title-bar"><span class="title-text">Press.doc - Featured Article</span><div class="title-buttons"><span>_</span><span>☐</span><span class="close-btn">X</span></div></div>
-                                <div class="window-content"><a href="#" target="_blank"><img src="RESOURCES/article-placeholder.png" alt="Featured Article"></a></div>
+                                <div class="window-content">
+                                    <a href="#" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'Press_Article'});">
+                                        <img src="RESOURCES/article-placeholder.png" alt="Featured Article">
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -57,13 +87,27 @@
     <footer><p>© 2025 Emby Matthews. All Rights Reserved.</p></footer>
     
     <div class="y2k-taskbar">
-        <a href="https://open.spotify.com/artist/7B1iWa7NEPeD7YlaxpJRNC?si=qcNSVJW1R66Tdtng2nfYww" class="taskbar-slot" title="Spotify"> <img src="RESOURCES/spotify_logo.png" alt="Spotify"></a>
-        <a href="https://music.apple.com/us/artist/emby-matthews/1546039557" class="taskbar-slot" title="Apple Music" target="_blank"><img src="RESOURCES/apple_music_logo.png" alt="Apple Music"></a>
-        <a href="https://emby.bandcamp.com/music" class="taskbar-slot" title="Bandcamp" target="_blank"><img src="RESOURCES/bandcamp_logo.png" alt="Bandcamp"></a>
-        <a href="https://www.youtube.com/@EMBYMATTHEWS" class="taskbar-slot" title="YouTube" target="_blank"><img src="RESOURCES/youtube_logo.png" alt="YouTube"></a>
-        <a href="https://www.instagram.com/embymatthews" class="taskbar-slot" title="Instagram" target="_blank"><img src="RESOURCES/instagram_logo.png" alt="Instagram"></a>
-        <a href="https://www.tiktok.com/@embymatthews" class="taskbar-slot" title="TikTok" target="_blank"><img src="RESOURCES/tiktok_logo_with_lozenge.png" alt="TikTok"></a>
-        <a href="https://x.com/embymatthews" class="taskbar-slot" title="X" target="_blank"><img src="RESOURCES/x_logo.png" alt="X"></a>
+        <a href="https://open.spotify.com/artist/7B1iWa7NEPeD7YlaxpJRNC?si=qcNSVJW1R66Tdtng2nfYww" class="taskbar-slot" title="Spotify" onclick="fbq('track', 'ViewContent', {content_name: 'Spotify_Profile', content_category: 'Social'});"> 
+            <img src="RESOURCES/spotify_logo.png" alt="Spotify">
+        </a>
+        <a href="https://music.apple.com/us/artist/emby-matthews/1546039557" class="taskbar-slot" title="Apple Music" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'AppleMusic_Profile', content_category: 'Social'});">
+            <img src="RESOURCES/apple_music_logo.png" alt="Apple Music">
+        </a>
+        <a href="https://emby.bandcamp.com/music" class="taskbar-slot" title="Bandcamp" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'Bandcamp_Profile', content_category: 'Social'});">
+            <img src="RESOURCES/bandcamp_logo.png" alt="Bandcamp">
+        </a>
+        <a href="https://www.youtube.com/@EMBYMATTHEWS" class="taskbar-slot" title="YouTube" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'YouTube_Channel', content_category: 'Social'});">
+            <img src="RESOURCES/youtube_logo.png" alt="YouTube">
+        </a>
+        <a href="https://www.instagram.com/embymatthews" class="taskbar-slot" title="Instagram" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'Instagram_Profile', content_category: 'Social'});">
+            <img src="RESOURCES/instagram_logo.png" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@embymatthews" class="taskbar-slot" title="TikTok" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'TikTok_Profile', content_category: 'Social'});">
+            <img src="RESOURCES/tiktok_logo_with_lozenge.png" alt="TikTok">
+        </a>
+        <a href="https://x.com/embymatthews" class="taskbar-slot" title="X" target="_blank" onclick="fbq('track', 'ViewContent', {content_name: 'X_Profile', content_category: 'Social'});">
+            <img src="RESOURCES/x_logo.png" alt="X">
+        </a>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -83,15 +127,26 @@
             },
             navigation: {
                 nextEl: '.swiper-button-next',
-                prevEl: '.swiper'
+                prevEl: '.swiper-button-prev', 
+            },
+            // ADDED: Track when users slide to view different content
+            on: {
+                slideChange: function () {
+                    // Optional: You could track 'ViewContent' here for each slide if you wanted detailed analytics
+                    // console.log('Slide changed to: ' + this.realIndex); 
+                }
+            }
+        }); 
 
-        // YouTube a
-        const YOUTUBE_API_KEY = '[885239369143]';
-        const PLAYLIST_ID = '[PLmJgCM7ogGzHHGYc0iKQTqMn9bJFYobdJ]';
+        // YouTube API Logic
+        const YOUTUBE_API_KEY = '[885239369143]'; 
+        const PLAYLIST_ID = '[PLmJgCM7ogGzHHGYc0iKQTqMn9bJFYobdJ]'; 
 
-        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults
+        const apiUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&key=${YOUTUBE_API_KEY}&maxResults=1`;
+
+        fetch(apiUrl) 
             .then(response => response.json())
-            .
+            .then(data => { 
                 if (data.items && data.items.length > 0) {
                     const latestVideoId = data.items[0].snippet.resourceId.videoId;
                     document.getElementById('latest-youtube-video').src = `https://www.youtube.com/embed/${latestVideoId}`;
