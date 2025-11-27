@@ -81,34 +81,9 @@
         <section id="hero">
             <img src="RESOURCES/EMBY MATTHEWS LOGO.png" alt="Emby Matthews Logo" class="hero-logo">
         </section>
+
         <section id="music">
-            <div id="merch-popup" class="y2k-window">
-                <div class="title-bar">
-                    <span class="title-text">buy_da_merch.exe</span>
-                    <div class="title-buttons">
-                        <span>_</span>
-                        <span>☐</span>
-                        <span class="close-btn" onclick="document.getElementById('merch-popup').style.display='none'">X</span>
-                    </div>
-                </div>
-                
-                <div class="window-content merch-inner">
-                    <a href="https://bigthingsitw.com/products/emby-matthews-world-wide-stranger-cd?variant=43822236401734" 
-                       target="_blank" 
-                       onclick="fbq('track', 'InitiateCheckout', {content_name: 'Sidebar_CD_Promo', content_category: 'Merch'});">
-                        
-                        <div class="merch-img-wrapper">
-                            <img src="RESOURCES/merch_placeholder.webp" alt="World Wide Stranger CD">
-                        </div>
             
-                        <div class="merch-info">
-                            <h4>World Wide Stranger CD</h4>
-                            <p class="price">$15.00</p>
-                            <button class="win95-btn">ADD TO CART</button>
-                        </div>
-                    </a>
-                </div>
-            </div>
             <div class="carousel-wrapper">
                 <div class="swiper">
                     <div class="swiper-wrapper">
@@ -167,7 +142,22 @@
         </section>
 
     </main>
-
+    <div id="mini-popup" class="y2k-window">
+        <div class="title-bar">
+            <span class="title-text">buy_it.exe</span>
+            <div class="title-buttons">
+                <span class="close-btn" onclick="document.getElementById('mini-popup').style.display='none'">X</span>
+            </div>
+        </div>
+        
+        <div class="window-content mini-inner">
+            <a href="https://bigthingsitw.com/products/emby-matthews-world-wide-stranger-cd?variant=43822236401734" 
+               target="_blank">
+                <img src="RESOURCES/merch_placeholder.webp" alt="CD">
+                <div class="mini-btn">BUY $15</div>
+            </a>
+        </div>
+    </div>
     <footer><p>© 2025 Emby Matthews. All Rights Reserved.</p></footer>
     
     <div class="y2k-taskbar">
